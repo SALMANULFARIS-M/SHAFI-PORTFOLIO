@@ -1,1 +1,98 @@
 /* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
+
+
+
+        * { font-family: 'Inter', sans-serif; }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #0f0f23 0%, #1a1a3a 25%, #2d2d5f 50%, #1a1a3a 75%, #0f0f23 100%);
+        }
+
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .glow-effect {
+            box-shadow: 0 0 30px rgba(59, 130, 246, 0.3);
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, #60a5fa, #a855f7, #ec4899);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .hover-lift:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav-item {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .nav-item::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #60a5fa, #a855f7);
+            transition: width 0.3s ease;
+        }
+
+        .nav-item:hover::after,
+        .nav-item.active::after {
+            width: 100%;
+        }
+
+        .floating-animation {
+            animation: floating 6s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .pulse-glow {
+            animation: pulse-glow 2s infinite;
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.3); }
+            50% { box-shadow: 0 0 40px rgba(59, 130, 246, 0.6); }
+        }
+
+        .slide-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .slide-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .parallax-bg {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+        }

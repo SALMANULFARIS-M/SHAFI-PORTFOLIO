@@ -1,67 +1,99 @@
 <!-- app.component.html -->
-<nav class="fixed top-0 left-0 right-0 z-50 glass-effect border-b border-white/10">
-  <div class="container mx-auto px-6 py-4">
-    <div class="flex items-center justify-between">
-      <div class="text-2xl font-bold text-gradient">Shafi Shoukath</div>
-      <div class="hidden md:flex space-x-8">
-        <a href="#home" class="nav-item active text-sm font-medium hover:text-blue-400">Home</a>
-        <a href="#about" class="nav-item text-sm font-medium hover:text-blue-400">About</a>
-        <a href="#next-leaders" class="nav-item text-sm font-medium hover:text-blue-400">Next Leaders</a>
-        <a href="#insights" class="nav-item text-sm font-medium hover:text-blue-400">Insights</a>
-        <a href="#media" class="nav-item text-sm font-medium hover:text-blue-400">Media</a>
-        <a href="#contact" class="nav-item text-sm font-medium hover:text-blue-400">Contact</a>
-      </div>
-      <button class="md:hidden text-white" (click)="toggleMobileMenu()">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-        </svg>
-      </button>
+<nav class="fixed top-6 left-1/2 transform -translate-x-1/2 z-50">
+  <div class="flex items-center bg-black text-white px-6 py-3 rounded-full shadow-lg space-x-8">
+
+    <!-- Logo -->
+    <div class="flex items-center justify-center w-10 h-10 bg-white text-black rounded-full">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M12 4.354a4 4 0 100 7.292M15 21h6m-3-3v6M3 9a9 9 0 0118 0A9 9 0 013 9z" />
+      </svg>
     </div>
+
+    <!-- Center Nav Links -->
+    <div class="hidden md:flex space-x-6">
+      <a href="#home" class="nav-item text-sm font-medium hover:text-gray-300">Home</a>
+      <a href="#about" class="nav-item text-sm font-medium hover:text-gray-300">About</a>
+      <a href="#next-leaders" class="nav-item text-sm font-medium hover:text-gray-300">Next Leaders</a>
+      <a href="#insights" class="nav-item text-sm font-medium hover:text-gray-300">Insights</a>
+      <a href="#media" class="nav-item text-sm font-medium hover:text-gray-300">Media</a>
+      <a href="#contact" class="nav-item text-sm font-medium hover:text-gray-300">Contact</a>
+    </div>
+  </div>
+
+  <!-- Mobile Hamburger -->
+  <div class="absolute right-4 top-1/2 transform -translate-y-1/2 md:hidden">
+    <button (click)="toggleMobileMenu()" class="text-white">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
   </div>
 </nav>
 
 <!-- Mobile Menu -->
-<div *ngIf="mobileMenuOpen" class="fixed inset-0 z-50 glass-effect" (click)="closeMobileMenu()">
-  <div class="flex items-center justify-center h-full" (click)="$event.stopPropagation()">
-    <div class="text-center space-y-8">
-      <a href="#home" class="block text-2xl font-medium hover:text-blue-400" (click)="closeMobileMenu()">Home</a>
-      <a href="#about" class="block text-2xl font-medium hover:text-blue-400" (click)="closeMobileMenu()">About</a>
-      <a href="#next-leaders" class="block text-2xl font-medium hover:text-blue-400" (click)="closeMobileMenu()">Next Leaders</a>
-      <a href="#insights" class="block text-2xl font-medium hover:text-blue-400" (click)="closeMobileMenu()">Insights</a>
-      <a href="#media" class="block text-2xl font-medium hover:text-blue-400" (click)="closeMobileMenu()">Media</a>
-      <a href="#contact" class="block text-2xl font-medium hover:text-blue-400" (click)="closeMobileMenu()">Contact</a>
-      <button (click)="closeMobileMenu()" class="mt-8 glass-effect px-6 py-3 rounded-full">Close</button>
-    </div>
+<div *ngIf="mobileMenuOpen" class="fixed inset-0 z-40 bg-black/80 flex items-center justify-center" (click)="closeMobileMenu()">
+  <div class="text-center space-y-8 text-white" (click)="$event.stopPropagation()">
+    <a href="#home" class="block text-2xl font-medium" (click)="closeMobileMenu()">Home</a>
+    <a href="#about" class="block text-2xl font-medium" (click)="closeMobileMenu()">About</a>
+    <a href="#next-leaders" class="block text-2xl font-medium" (click)="closeMobileMenu()">Next Leaders</a>
+    <a href="#insights" class="block text-2xl font-medium" (click)="closeMobileMenu()">Insights</a>
+    <a href="#media" class="block text-2xl font-medium" (click)="closeMobileMenu()">Media</a>
+    <a href="#contact" class="block text-2xl font-medium" (click)="closeMobileMenu()">Contact</a>
+    <button (click)="closeMobileMenu()" class="mt-8 bg-white text-black px-6 py-3 rounded-full">Close</button>
   </div>
 </div>
 
-<!-- Hero Section -->
-<section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
-  <div class="absolute inset-0 opacity-10">
-    <div class="absolute top-20 left-10 w-72 h-72 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl floating-animation"></div>
-    <div class="absolute top-40 right-20 w-96 h-96 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl floating-animation" style="animation-delay: -2s;"></div>
-    <div class="absolute bottom-20 left-1/3 w-80 h-80 bg-pink-500 rounded-full mix-blend-multiply filter blur-xl floating-animation" style="animation-delay: -4s;"></div>
-  </div>
 
-  <div class="container mx-auto px-6 text-center z-10">
-    <div class="slide-in visible">
-      <h1 class="text-6xl md:text-8xl font-black mb-6 text-gradient leading-tight">
-        Shafi Shoukath
+<!-- Hero Section -->
+<section id="home" class="min-h-screen flex items-center bg-[#f8f8f8] text-[#222222] relative overflow-hidden">
+  <div class="container mx-auto flex flex-col md:flex-row items-center justify-between w-full px-6 md:px-12 lg:px-16 py-12 md:py-0">
+
+    <!-- Left Content -->
+    <div class="text-left max-w-xl flex flex-col gap-8 md:gap-10 md:ms-12 lg:ms-24 tablet-adjustment">
+      <!-- Headline -->
+      <h1 class="text-5xl md:text-6xl lg:text-7xl font-light leading-tight">
+        Shafi <span class="font-semibold">Shoukath</span>
       </h1>
-      <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto font-light leading-relaxed">
+
+      <!-- Subhead -->
+      <p class="text-base md:text-lg lg:text-xl text-[#7b7b7b] leading-relaxed">
         Founder & Builder of a Private Startup Ecosystem Focused on Solving Real Problems
       </p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-        <button class="glass-effect hover-lift px-8 py-4 rounded-full font-semibold text-lg glow-effect">
+
+      <!-- CTA Buttons -->
+      <div class="flex flex-col sm:flex-row gap-4">
+        <button class="px-8 py-4 bg-[#222222] text-white rounded-full font-medium hover:bg-[#7b7b7b] transition">
           Explore My Work
         </button>
-        <button class="border border-white/30 hover:border-white/60 px-8 py-4 rounded-full font-semibold text-lg hover-lift">
+        <button class="px-8 py-4 border border-[#222222] rounded-full font-medium text-[#222222] hover:bg-[#222222] hover:text-white transition">
           Read My Insights
         </button>
       </div>
     </div>
+
+    <!-- Right Side Image with Overlay -->
+    <div class="relative mt-12 md:mt-0 md:ml-8 lg:ml-20 flex-shrink-0">
+      <img src="shafi.jpg" alt="Shafi Shoukath" class="w-[280px] sm:w-[340px] md:w-[400px] lg:w-[520px] rounded-xl shadow-lg object-cover" />
+      <div class="absolute inset-0 bg-[#222222]/20 rounded-xl mix-blend-multiply"></div>
+    </div>
+  </div>
+
+  <!-- Vertical Side Label -->
+  <div class="absolute -left-8 md:left-2 lg:left-6 top-2/3 md:top-1/2 -translate-y-1/2 rotate-[-90deg] text-xs md:text-sm tracking-[0.25em] text-[#7b7b7b] whitespace-nowrap tablet-vertical-label">
+    Entrepreneur
+  </div>
+
+  <!-- Footer Side Labels -->
+  <div class="absolute bottom-6 left-1/2 -translate-x-1/2 text-xs text-[#7b7b7b] tracking-wide">
+    Scroll down ↓
+  </div>
+  <div class="absolute bottom-6 right-6 text-xs text-[#7b7b7b] tracking-widest">
+    2025
   </div>
 </section>
+
 
 <!-- Intro Section -->
 <section class="py-24 relative">

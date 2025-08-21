@@ -7,7 +7,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:shafi": "node dist/shafi/server/server.mjs"
+    "serve:ssr:shafi": "node dist/shafi/server/server.mjs",
+    "build:ssr": "ng build && npm run serve:ssr:shafi"
   },
   "private": true,
   "dependencies": {

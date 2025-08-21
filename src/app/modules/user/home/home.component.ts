@@ -1,10 +1,11 @@
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { AfterViewInit, Component, Inject, OnDestroy, OnInit, PLATFORM_ID } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { HeaderComponent } from '../../../shared/components/header/header.component';
 
 @Component({
   selector: 'app-home',
-  imports: [CommonModule,FormsModule],
+  imports: [CommonModule,HeaderComponent,FormsModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })

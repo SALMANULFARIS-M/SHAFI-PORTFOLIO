@@ -1,50 +1,5 @@
-<!-- app.component.html -->
-<nav class="fixed top-6 left-1/2 transform -translate-x-1/2 z-50">
-  <div class="flex items-center bg-black text-white px-6 py-3 rounded-full shadow-lg space-x-8">
 
-    <!-- Logo -->
-    <div class="flex items-center justify-center w-10 h-10 bg-white text-black rounded-full">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-          d="M12 4.354a4 4 0 100 7.292M15 21h6m-3-3v6M3 9a9 9 0 0118 0A9 9 0 013 9z" />
-      </svg>
-    </div>
-
-    <!-- Center Nav Links -->
-    <div class="hidden md:flex space-x-6">
-      <a href="#home" class="nav-item text-sm font-medium hover:text-gray-300">Home</a>
-      <a href="#about" class="nav-item text-sm font-medium hover:text-gray-300">About</a>
-      <a href="#next-leaders" class="nav-item text-sm font-medium hover:text-gray-300">Next Leaders</a>
-      <a href="#insights" class="nav-item text-sm font-medium hover:text-gray-300">Insights</a>
-      <a href="#media" class="nav-item text-sm font-medium hover:text-gray-300">Media</a>
-      <a href="#contact" class="nav-item text-sm font-medium hover:text-gray-300">Contact</a>
-    </div>
-  </div>
-
-  <!-- Mobile Hamburger -->
-  <div class="absolute right-4 top-1/2 transform -translate-y-1/2 md:hidden">
-    <button (click)="toggleMobileMenu()" class="text-white">
-      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-          d="M4 6h16M4 12h16M4 18h16" />
-      </svg>
-    </button>
-  </div>
-</nav>
-
-<!-- Mobile Menu -->
-<div *ngIf="mobileMenuOpen" class="fixed inset-0 z-40 bg-black/80 flex items-center justify-center" (click)="closeMobileMenu()">
-  <div class="text-center space-y-8 text-white" (click)="$event.stopPropagation()">
-    <a href="#home" class="block text-2xl font-medium" (click)="closeMobileMenu()">Home</a>
-    <a href="#about" class="block text-2xl font-medium" (click)="closeMobileMenu()">About</a>
-    <a href="#next-leaders" class="block text-2xl font-medium" (click)="closeMobileMenu()">Next Leaders</a>
-    <a href="#insights" class="block text-2xl font-medium" (click)="closeMobileMenu()">Insights</a>
-    <a href="#media" class="block text-2xl font-medium" (click)="closeMobileMenu()">Media</a>
-    <a href="#contact" class="block text-2xl font-medium" (click)="closeMobileMenu()">Contact</a>
-    <button (click)="closeMobileMenu()" class="mt-8 bg-white text-black px-6 py-3 rounded-full">Close</button>
-  </div>
-</div>
-
+<app-header></app-header>
 
 <!-- Hero Section -->
 <section id="home" class="min-h-screen flex items-center bg-[#f8f8f8] text-[#222222] relative overflow-hidden">
@@ -96,119 +51,149 @@
 
 
 <!-- Intro Section -->
-<section class="py-24 relative">
+<section class="relative py-24 bg-[#f8f8f8] text-[#222222]">
   <div class="section-divider mb-16"></div>
+
   <div class="container mx-auto px-6">
-    <div class="slide-in max-w-5xl mx-auto text-center">
-      <h2 class="text-4xl md:text-5xl font-bold mb-8 text-gradient">What Am I...</h2>
-      <p class="text-xl text-gray-300 leading-relaxed mb-12">
+    <div class="max-w-5xl mx-auto text-center">
+      <!-- Heading -->
+      <h2 class="text-4xl md:text-5xl font-bold mb-8">
+        What Am I...
+      </h2>
+
+      <!-- Description -->
+      <p class="text-base md:text-xl text-[#7b7b7b] leading-relaxed max-w-3xl mx-auto">
         I build ventures that solve real problems faced by entrepreneurs, startups, investors, and governments.
         My mission is to create an environment where thousands of startups rise, contribute to the economy,
         help investors achieve success, enable governments to fast-track development, and improve everyday life for citizens.
       </p>
 
-      <div class="grid md:grid-cols-3 gap-8 mt-16">
-        <div class="glass-effect rounded-2xl p-8 hover-lift">
-          <div class="w-16 h-16 bg-blue-500/20 rounded-2xl flex items-center justify-center mb-6 mx-auto pulse-glow">
-            <svg class="w-8 h-8 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+      <!-- Cards -->
+      <div class="grid gap-6 md:gap-8 mt-16 md:grid-cols-3">
+        <!-- Card 1 -->
+        <div class="rounded-2xl p-8 bg-[#ffffff] border border-[#222222]/10 shadow-[0_10px_30px_rgba(34,34,34,0.06)] transition
+                    hover:-translate-y-1 hover:shadow-[0_18px_50px_rgba(34,34,34,0.12)]">
+          <div class="w-16 h-16 rounded-2xl bg-[#f8f8f8] border border-[#222222]/10
+                      flex items-center justify-center mb-6 mx-auto">
+            <svg class="w-8 h-8 text-[#222222]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
             </svg>
           </div>
-          <h3 class="text-xl font-bold mb-4">Problem-First Approach</h3>
-          <p class="text-gray-400">Diagnose deeply, design precisely, execute effectively.</p>
+          <h3 class="text-xl font-semibold mb-3">Problem-First Approach</h3>
+          <p class="text-[#7b7b7b]">Diagnose deeply, design precisely, execute effectively.</p>
         </div>
 
-        <div class="glass-effect rounded-2xl p-8 hover-lift">
-          <div class="w-16 h-16 bg-purple-500/20 rounded-2xl flex items-center justify-center mb-6 mx-auto pulse-glow" style="animation-delay: -0.5s;">
-            <svg class="w-8 h-8 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+        <!-- Card 2 -->
+        <div class="rounded-2xl p-8 bg-[#ffffff] border border-[#222222]/10 shadow-[0_10px_30px_rgba(34,34,34,0.06)] transition
+                    hover:-translate-y-1 hover:shadow-[0_18px_50px_rgba(34,34,34,0.12)]">
+          <div class="w-16 h-16 rounded-2xl bg-[#f8f8f8] border border-[#222222]/10
+                      flex items-center justify-center mb-6 mx-auto">
+            <svg class="w-8 h-8 text-[#222222]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
             </svg>
           </div>
-          <h3 class="text-xl font-bold mb-4">Private Ecosystem Building</h3>
-          <p class="text-gray-400">Independent, impact-driven, and stakeholder-focused.</p>
+          <h3 class="text-xl font-semibold mb-3">Private Ecosystem Building</h3>
+          <p class="text-[#7b7b7b]">Independent, impact-driven, and stakeholder-focused.</p>
         </div>
 
-        <div class="glass-effect rounded-2xl p-8 hover-lift">
-          <div class="w-16 h-16 bg-pink-500/20 rounded-2xl flex items-center justify-center mb-6 mx-auto pulse-glow" style="animation-delay: -1s;">
-            <svg class="w-8 h-8 text-pink-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+        <!-- Card 3 -->
+        <div class="rounded-2xl p-8 bg-[#ffffff] border border-[#222222]/10 shadow-[0_10px_30px_rgba(34,34,34,0.06)] transition
+                    hover:-translate-y-1 hover:shadow-[0_18px_50px_rgba(34,34,34,0.12)]">
+          <div class="w-16 h-16 rounded-2xl bg-[#f8f8f8] border border-[#222222]/10
+                      flex items-center justify-center mb-6 mx-auto">
+            <svg class="w-8 h-8 text-[#222222]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
             </svg>
           </div>
-          <h3 class="text-xl font-bold mb-4">Cross-Stakeholder Impact</h3>
-          <p class="text-gray-400">From founders to policymakers.</p>
+          <h3 class="text-xl font-semibold mb-3">Cross-Stakeholder Impact</h3>
+          <p class="text-[#7b7b7b]">From founders to policymakers.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
+
 <!-- About Section -->
-<section id="about" class="py-24 relative">
+<section id="about" class="py-24 relative bg-[#f8f8f8] text-[#222222]">
   <div class="section-divider mb-16"></div>
   <div class="container mx-auto px-6">
     <div class="slide-in">
       <div class="grid lg:grid-cols-2 gap-16 items-center">
+
+        <!-- Left Content -->
         <div>
-          <h2 class="text-4xl md:text-5xl font-bold mb-8 text-gradient">About</h2>
-          <p class="text-lg text-gray-300 leading-relaxed mb-6">
+          <h2 class="text-4xl md:text-5xl font-bold mb-8">About</h2>
+          <p class="text-lg text-[#7b7b7b] leading-relaxed mb-6">
             Raised in a rural village in Kerala, I started my first venture with no access to practical startup guidance,
             funding pathways, or the right networks. Speaking with other entrepreneurs, I realised this was not my story
             alone — it was a systemic gap.
           </p>
-          <p class="text-lg text-gray-300 leading-relaxed mb-8">
+          <p class="text-lg text-[#7b7b7b] leading-relaxed mb-8">
             Generic programs fail because they try to teach everyone the same way. My work focuses on identifying
             the unique challenges of each stakeholder and creating targeted, sustainable solutions.
           </p>
 
-          <div class="glass-effect rounded-2xl p-6 mb-8">
-            <h3 class="text-2xl font-bold mb-4 text-blue-400">Mission</h3>
-            <p class="text-gray-300">
+          <div class="rounded-2xl p-6 mb-8 bg-[#ffffff] border border-[#222222]/10 shadow-[0_10px_30px_rgba(34,34,34,0.06)]">
+            <h3 class="text-2xl font-bold mb-4 text-[#222222]">Mission</h3>
+            <p class="text-[#7b7b7b]">
               To build a privately held startup ecosystem where real problems are met with real solutions,
               and where execution leads to measurable outcomes.
             </p>
           </div>
         </div>
 
+        <!-- Right Content -->
         <div class="space-y-6">
-          <h3 class="text-3xl font-bold text-gradient">Principles</h3>
+          <h3 class="text-3xl font-bold">Principles</h3>
           <div class="space-y-4">
-            <div class="glass-effect rounded-xl p-6 hover-lift">
+
+            <!-- Principle 1 -->
+            <div class="rounded-xl p-6 bg-[#ffffff] border border-[#222222]/10 shadow-[0_6px_20px_rgba(34,34,34,0.06)] hover:-translate-y-1 hover:shadow-[0_12px_30px_rgba(34,34,34,0.12)] transition">
               <div class="flex items-center mb-3">
-                <div class="w-3 h-3 bg-blue-400 rounded-full mr-4"></div>
-                <h4 class="font-semibold">Diagnose before prescribing</h4>
+                <div class="w-3 h-3 bg-[#222222] rounded-full mr-4"></div>
+                <h4 class="font-semibold text-[#222222]">Diagnose before prescribing</h4>
               </div>
-              <p class="text-gray-400 text-sm ml-7">Understanding the root cause before offering solutions</p>
+              <p class="text-[#7b7b7b] text-sm ml-7">Understanding the root cause before offering solutions</p>
             </div>
 
-            <div class="glass-effect rounded-xl p-6 hover-lift">
+            <!-- Principle 2 -->
+            <div class="rounded-xl p-6 bg-[#ffffff] border border-[#222222]/10 shadow-[0_6px_20px_rgba(34,34,34,0.06)] hover:-translate-y-1 hover:shadow-[0_12px_30px_rgba(34,34,34,0.12)] transition">
               <div class="flex items-center mb-3">
-                <div class="w-3 h-3 bg-purple-400 rounded-full mr-4"></div>
-                <h4 class="font-semibold">Focus on practical, not theoretical</h4>
+                <div class="w-3 h-3 bg-[#7b7b7b] rounded-full mr-4"></div>
+                <h4 class="font-semibold text-[#222222]">Focus on practical, not theoretical</h4>
               </div>
-              <p class="text-gray-400 text-sm ml-7">Real-world applications over academic concepts</p>
+              <p class="text-[#7b7b7b] text-sm ml-7">Real-world applications over academic concepts</p>
             </div>
 
-            <div class="glass-effect rounded-xl p-6 hover-lift">
+            <!-- Principle 3 -->
+            <div class="rounded-xl p-6 bg-[#ffffff] border border-[#222222]/10 shadow-[0_6px_20px_rgba(34,34,34,0.06)] hover:-translate-y-1 hover:shadow-[0_12px_30px_rgba(34,34,34,0.12)] transition">
               <div class="flex items-center mb-3">
-                <div class="w-3 h-3 bg-pink-400 rounded-full mr-4"></div>
-                <h4 class="font-semibold">Build with integrity</h4>
+                <div class="w-3 h-3 bg-[#222222] rounded-full mr-4"></div>
+                <h4 class="font-semibold text-[#222222]">Build with integrity</h4>
               </div>
-              <p class="text-gray-400 text-sm ml-7">Ethical practices in every aspect of business</p>
+              <p class="text-[#7b7b7b] text-sm ml-7">Ethical practices in every aspect of business</p>
             </div>
 
-            <div class="glass-effect rounded-xl p-6 hover-lift">
+            <!-- Principle 4 -->
+            <div class="rounded-xl p-6 bg-[#ffffff] border border-[#222222]/10 shadow-[0_6px_20px_rgba(34,34,34,0.06)] hover:-translate-y-1 hover:shadow-[0_12px_30px_rgba(34,34,34,0.12)] transition">
               <div class="flex items-center mb-3">
-                <div class="w-3 h-3 bg-green-400 rounded-full mr-4"></div>
-                <h4 class="font-semibold">Deliver measurable results</h4>
+                <div class="w-3 h-3 bg-[#7b7b7b] rounded-full mr-4"></div>
+                <h4 class="font-semibold text-[#222222]">Deliver measurable results</h4>
               </div>
-              <p class="text-gray-400 text-sm ml-7">Quantifiable impact and transparent outcomes</p>
+              <p class="text-[#7b7b7b] text-sm ml-7">Quantifiable impact and transparent outcomes</p>
             </div>
+
           </div>
         </div>
       </div>
     </div>
   </div>
 </section>
+
 
 <!-- Next Leaders Programme Section -->
 <section id="next-leaders" class="py-24 relative">
